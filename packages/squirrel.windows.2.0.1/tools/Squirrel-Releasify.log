@@ -1,0 +1,9 @@
+﻿[11/12/22 23:44:05] info: Program: Starting Squirrel Updater: --releasify ProyectoTitulo.1.0.0.nupkg
+[11/12/22 23:44:05] info: Program: Bootstrapper EXE found at:C:\Users\asa_l\source\repos\ProyectoTitulo\packages\squirrel.windows.2.0.1\tools\Setup.exe
+[11/12/22 23:44:05] info: Program: Creating release package: C:\Users\asa_l\source\repos\ProyectoTitulo\Releases\ProyectoTitulo.1.0.0.nupkg
+[11/12/22 23:44:05] info: ReleasePackage: Creating release package: C:\Users\asa_l\source\repos\ProyectoTitulo\Releases\ProyectoTitulo.1.0.0.nupkg => C:\Users\asa_l\source\repos\ProyectoTitulo\Releases\ProyectoTitulo-1.0.0-full.nupkg
+[11/12/22 23:44:06] info: ReleasePackage: Extracting dependent packages: []
+[11/12/22 23:44:06] info: ReleasePackage: Removing unnecessary data
+[11/12/22 23:44:06] info: ReleasePackage: No release notes found in C:\Users\asa_l\AppData\Local\SquirrelTemp\tempa\ProyectoTitulo.nuspec
+[11/12/22 23:44:07] info: Program: Building embedded zip file for Setup.exe
+[11/12/22 23:44:09] info: Program: Finished Squirrel Updater

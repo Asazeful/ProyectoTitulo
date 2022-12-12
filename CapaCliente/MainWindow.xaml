@@ -1,0 +1,20 @@
+﻿<Window x:Class="CapaCliente.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CapaCliente"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="BtnInventario" Content="Inventario" HorizontalAlignment="Left" Margin="95,63,0,0" VerticalAlignment="Top" Width="278" Height="55" Click="BtnInventario_Click"/>
+        <Button x:Name="BtnCompras" Content="Compras" HorizontalAlignment="Left" Margin="95,141,0,0" VerticalAlignment="Top" Width="278" Height="55" Click="BtnCompras_Click"/>
+        <Button x:Name="BtnVentas" Content="Ventas" HorizontalAlignment="Left" Margin="95,299,0,0" VerticalAlignment="Top" Width="278" Height="55" Click="BtnVentas_Click"/>
+        <Button x:Name="BtnClientes" Content="Clientes" HorizontalAlignment="Left" Margin="95,217,0,0" VerticalAlignment="Top" Width="278" Height="55" Click="BtnClientes_Click"/>
+        <Label Content="Productos bajos en stock" HorizontalAlignment="Left" Margin="534,32,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="LstProductosBajos" HorizontalAlignment="Left" Height="258" Margin="475,63,0,0" VerticalAlignment="Top" Width="262"/>
+        <Button x:Name="BtnPRoveedores" Content="Proveedores" HorizontalAlignment="Left" Margin="475,343,0,0" VerticalAlignment="Top" Width="124" Height="37" Click="BtnPRoveedores_Click"/>
+        <Button x:Name="BtnSalir" Content="Salir" HorizontalAlignment="Left" Margin="621,343,0,0" VerticalAlignment="Top" Width="116" Height="37" Click="BtnSalir_Click"/>
+
+    </Grid>
+</Window>

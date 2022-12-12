@@ -1,0 +1,39 @@
+﻿<Window x:Class="CapaCliente.Inventario"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CapaCliente"
+        mc:Ignorable="d"
+        Title="Inventario" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="257" Margin="15,10,0,0" VerticalAlignment="Top" Width="360"/>
+        <ListBox x:Name="LstProductos" Grid.Column="1" HorizontalAlignment="Left" Height="237" Margin="33,30,0,0" VerticalAlignment="Top" Width="336"/>
+        <TextBox x:Name="TxtNombreProducto" HorizontalAlignment="Left" Height="23" Margin="27,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Nombre del producto:" HorizontalAlignment="Left" Margin="19,23,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtCantidadProducto" HorizontalAlignment="Left" Height="23" Margin="27,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Cantidad:" HorizontalAlignment="Left" Margin="19,107,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="CmbCategoria" HorizontalAlignment="Left" Margin="23,223,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Categoría:" HorizontalAlignment="Left" Margin="15,192,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="BtnVolver" Content="Volver" HorizontalAlignment="Left" Margin="27,389,0,0" VerticalAlignment="Top" Width="75" Click="BtnVolver_Click"/>
+        <Label Content="|Nombre | Categoria | Cantidad | P.Compra | P.Venta|" HorizontalAlignment="Left" Margin="33,4,0,0" VerticalAlignment="Top" Grid.Column="1" Width="336"/>
+        <Button x:Name="BtnAñadirProducto" Content="Nuevo producto" HorizontalAlignment="Left" Margin="181,291,0,0" VerticalAlignment="Top" Width="119" Click="BtnAñadirProducto_Click"/>
+        <TextBox x:Name="TxtPrecioProducto" HorizontalAlignment="Left" Height="23" Margin="197,54,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
+        <Label x:Name="LblPrecioCompra" Content="Precio de compra:" HorizontalAlignment="Left" Margin="181,23,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Button x:Name="BtnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="197,335,0,0" VerticalAlignment="Top" Width="75" Click="BtnCancelar_Click" Visibility="Hidden"/>
+        <Button x:Name="BtnAñadir" Content="Añadir" HorizontalAlignment="Left" Margin="27,291,0,0" VerticalAlignment="Top" Width="75" Click="BtnAñadir_Click" Visibility="Hidden"/>
+        <TextBox x:Name="TxtPrecioVenta" HorizontalAlignment="Left" Height="23" Margin="197,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
+        <Label x:Name="LblPrecioVenta" Content="Precio de venta:" HorizontalAlignment="Left" Margin="181,107,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Button x:Name="BtnFiltrarStock" Content="Filtrar por stock" Grid.Column="1" HorizontalAlignment="Left" Margin="33,320,0,0" VerticalAlignment="Top" Width="115" Click="BtnFiltrarStock_Click"/>
+        <Button x:Name="BtnFiltrarCategoria" Content="Filtrar por categoria" Grid.Column="1" HorizontalAlignment="Left" Margin="33,349,0,0" VerticalAlignment="Top" Width="115" Click="BtnFiltrarCategoria_Click"/>
+        <Button x:Name="BtnFiltrar" Content="Filtrar" Grid.Column="1" HorizontalAlignment="Left" Margin="221,320,0,0" VerticalAlignment="Top" Width="95" Click="BtnFiltrar_Click" Visibility="Hidden"/>
+        <Button x:Name="BtnFiltrarNombre" Content="Filtrar por nombre" Grid.Column="1" HorizontalAlignment="Left" Margin="33,291,0,0" VerticalAlignment="Top" Width="115" Click="BtnFiltrarNombre_Click"/>
+        <Button x:Name="BtnActualizarProducto" Content="Actualizar producto" HorizontalAlignment="Left" Margin="181,325,0,0" VerticalAlignment="Top" Width="119" Click="BtnActualizarProducto_Click"/>
+        <Button x:Name="BtnConfirmarActualizacion" Content="Confirmar" HorizontalAlignment="Left" Margin="23,330,0,0" VerticalAlignment="Top" Width="75" Click="BtnConfirmarActualizacion_Click" Visibility="Hidden"/>
+
+    </Grid>
+</Window>

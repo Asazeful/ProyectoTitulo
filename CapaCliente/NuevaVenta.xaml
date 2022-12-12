@@ -1,0 +1,24 @@
+﻿<Window x:Class="CapaCliente.NuevaVenta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CapaCliente"
+        mc:Ignorable="d"
+        Title="NuevaVenta" Height="450" Width="800">
+    <Grid>
+        <DatePicker x:Name="DatFechaVenta" HorizontalAlignment="Left" Margin="336,153,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <ListBox x:Name="LstProductos" HorizontalAlignment="Left" Height="100" Margin="34,49,0,0" VerticalAlignment="Top" Width="285"/>
+        <Label Content="Producto:" HorizontalAlignment="Left" Margin="34,18,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtCantidadProducto" HorizontalAlignment="Left" Height="23" Margin="34,211,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Cantidad:" HorizontalAlignment="Left" Margin="34,180,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="BtnAñadir" Content="Añadir" HorizontalAlignment="Left" Margin="221,211,0,0" VerticalAlignment="Top" Width="75" Click="BtnAñadir_Click"/>
+        <ListBox x:Name="LstCarritoActual" HorizontalAlignment="Left" Height="100" Margin="448,49,0,0" VerticalAlignment="Top" Width="283"/>
+        <Label Content="Carrito:" HorizontalAlignment="Left" Margin="448,23,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="BtnEliminarProducto" Content="Eliminar" HorizontalAlignment="Left" Margin="606,229,0,0" VerticalAlignment="Top" Width="75" Click="BtnEliminarProducto_Click"/>
+        <Button x:Name="BtnTerminarCompra" Content="Pasa por caja" HorizontalAlignment="Left" Margin="606,191,0,0" VerticalAlignment="Top" Width="125" Click="BtnTerminarCompra_Click"/>
+        <Button x:Name="BtnSalir" Content="Salir" HorizontalAlignment="Left" Margin="34,367,0,0" VerticalAlignment="Top" Width="75" Click="BtnSalir_Click"/>
+        <ComboBox x:Name="CmbClientes" HorizontalAlignment="Left" Margin="448,191,0,0" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>

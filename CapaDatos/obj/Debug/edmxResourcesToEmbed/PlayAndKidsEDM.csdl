@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NegocioPlayModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="cod_cliente" />
+    </Key>
+    <Property Name="cod_cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nom_cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telefono_cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="Boolean" Nullable="false" />
+    <Property Name="deuda" Type="Int64" />
+    <NavigationProperty Name="Ventas" Relationship="Self.FK_Ventas_ToCliente" FromRole="Clientes" ToRole="Ventas" />
+  </EntityType>
+  <EntityType Name="Compras">
+    <Key>
+      <PropertyRef Name="cod_compra" />
+    </Key>
+    <Property Name="cod_compra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" ConcurrencyMode="Fixed" />
+    <Property Name="cod_proveedor" Type="Int32" />
+    <Property Name="fecha_compra" Type="DateTime" Precision="0" />
+    <Property Name="total" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="Proveedor" Relationship="Self.FK_Compras_ToProveedor" FromRole="Compras" ToRole="Proveedor" />
+    <NavigationProperty Name="Detalle_compra" Relationship="NegocioPlayModel.FK_Detalle_compra_ToCompras" FromRole="Compras" ToRole="Detalle_compra" />
+  </EntityType>
+  <EntityType Name="Detalle_compra">
+    <Key>
+      <PropertyRef Name="cod_detalle" />
+    </Key>
+    <Property Name="cod_detalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cod_compra" Type="Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="cod_producto" Type="Int32" Nullable="false" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <Property Name="subtotal" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="Producto" Relationship="Self.FK_Table_ToProducto" FromRole="Detalle_compra" ToRole="Producto" />
+    <NavigationProperty Name="Compras" Relationship="NegocioPlayModel.FK_Detalle_compra_ToCompras" FromRole="Detalle_compra" ToRole="Compras" />
+  </EntityType>
+  <EntityType Name="Detalle_ventas">
+    <Key>
+      <PropertyRef Name="cod_detalle" />
+    </Key>
+    <Property Name="cod_detalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" />
+    <Property Name="cod_ventas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" ConcurrencyMode="Fixed" />
+    <Property Name="cod_producto" Type="Int32" Nullable="false" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <Property Name="precio_producto" Type="Int64" Nullable="false" />
+    <Property Name="subtotal" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="Producto" Relationship="Self.FK_Detalle_ventas_ToProducto" FromRole="Detalle_ventas" ToRole="Producto" />
+    <NavigationProperty Name="Ventas" Relationship="NegocioPlayModel.FK_Detalle_ventas_ToVentas" FromRole="Detalle_ventas" ToRole="Ventas" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="cod_producto" />
+    </Key>
+    <Property Name="cod_producto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nom_producto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="categoria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="precio_compra" Type="Int64" Nullable="false" />
+    <Property Name="precio_venta" Type="Int64" Nullable="false" />
+    <Property Name="stock" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Detalle_compra" Relationship="Self.FK_Table_ToProducto" FromRole="Producto" ToRole="Detalle_compra" />
+    <NavigationProperty Name="Detalle_ventas" Relationship="Self.FK_Detalle_ventas_ToProducto" FromRole="Producto" ToRole="Detalle_ventas" />
+  </EntityType>
+  <EntityType Name="Proveedor">
+    <Key>
+      <PropertyRef Name="cod_proveedor" />
+    </Key>
+    <Property Name="cod_proveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nom_proveedor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telefono_proveedor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Compras" Relationship="Self.FK_Compras_ToProveedor" FromRole="Proveedor" ToRole="Compras" />
+  </EntityType>
+  <EntityType Name="Ventas">
+    <Key>
+      <PropertyRef Name="cod_venta" />
+    </Key>
+    <Property Name="cod_venta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" ConcurrencyMode="Fixed" />
+    <Property Name="cod_cliente" Type="Int32" />
+    <Property Name="fecha_venta" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="total" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="Clientes" Relationship="Self.FK_Ventas_ToCliente" FromRole="Ventas" ToRole="Clientes" />
+    <NavigationProperty Name="Detalle_ventas" Relationship="NegocioPlayModel.FK_Detalle_ventas_ToVentas" FromRole="Ventas" ToRole="Detalle_ventas" />
+  </EntityType>
+  <Association Name="FK_Ventas_ToCliente">
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
+    <End Role="Ventas" Type="Self.Ventas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="cod_cliente" />
+      </Principal>
+      <Dependent Role="Ventas">
+        <PropertyRef Name="cod_cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Compras_ToProveedor">
+    <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="0..1" />
+    <End Role="Compras" Type="Self.Compras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedor">
+        <PropertyRef Name="cod_proveedor" />
+      </Principal>
+      <Dependent Role="Compras">
+        <PropertyRef Name="cod_proveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_ToProducto">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+    <End Role="Detalle_compra" Type="Self.Detalle_compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="cod_producto" />
+      </Principal>
+      <Dependent Role="Detalle_compra">
+        <PropertyRef Name="cod_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Detalle_ventas_ToProducto">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+    <End Role="Detalle_ventas" Type="Self.Detalle_ventas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="cod_producto" />
+      </Principal>
+      <Dependent Role="Detalle_ventas">
+        <PropertyRef Name="cod_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NegocioPlayEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" />
+    <EntitySet Name="Compras" EntityType="Self.Compras" />
+    <EntitySet Name="Detalle_compra" EntityType="Self.Detalle_compra" />
+    <EntitySet Name="Detalle_ventas" EntityType="Self.Detalle_ventas" />
+    <EntitySet Name="Producto" EntityType="Self.Producto" />
+    <EntitySet Name="Proveedor" EntityType="Self.Proveedor" />
+    <EntitySet Name="Ventas" EntityType="Self.Ventas" />
+    <AssociationSet Name="FK_Ventas_ToCliente" Association="Self.FK_Ventas_ToCliente">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Ventas" EntitySet="Ventas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Compras_ToProveedor" Association="Self.FK_Compras_ToProveedor">
+      <End Role="Proveedor" EntitySet="Proveedor" />
+      <End Role="Compras" EntitySet="Compras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_ToProducto" Association="Self.FK_Table_ToProducto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="Detalle_compra" EntitySet="Detalle_compra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Detalle_ventas_ToProducto" Association="Self.FK_Detalle_ventas_ToProducto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="Detalle_ventas" EntitySet="Detalle_ventas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Detalle_ventas_ToVentas" Association="NegocioPlayModel.FK_Detalle_ventas_ToVentas">
+      <End Role="Ventas" EntitySet="Ventas" />
+      <End Role="Detalle_ventas" EntitySet="Detalle_ventas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Detalle_compra_ToCompras" Association="NegocioPlayModel.FK_Detalle_compra_ToCompras">
+      <End Role="Compras" EntitySet="Compras" />
+      <End Role="Detalle_compra" EntitySet="Detalle_compra" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_Detalle_ventas_ToVentas">
+    <End Type="NegocioPlayModel.Ventas" Role="Ventas" Multiplicity="1" />
+    <End Type="NegocioPlayModel.Detalle_ventas" Role="Detalle_ventas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ventas">
+        <PropertyRef Name="cod_venta" />
+      </Principal>
+      <Dependent Role="Detalle_ventas">
+        <PropertyRef Name="cod_ventas" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Detalle_compra_ToCompras">
+    <End Type="NegocioPlayModel.Compras" Role="Compras" Multiplicity="1" />
+    <End Type="NegocioPlayModel.Detalle_compra" Role="Detalle_compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Compras">
+        <PropertyRef Name="cod_compra" />
+      </Principal>
+      <Dependent Role="Detalle_compra">
+        <PropertyRef Name="cod_compra" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

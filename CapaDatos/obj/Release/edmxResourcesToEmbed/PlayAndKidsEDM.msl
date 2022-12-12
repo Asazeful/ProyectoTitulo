@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NegocioPlayModelStoreContainer" CdmEntityContainer="NegocioPlayEntities">
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="NegocioPlayModel.Clientes">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="cod_cliente" ColumnName="cod_cliente" />
+          <ScalarProperty Name="nom_cliente" ColumnName="nom_cliente" />
+          <ScalarProperty Name="telefono_cliente" ColumnName="telefono_cliente" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="deuda" ColumnName="deuda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Compras">
+      <EntityTypeMapping TypeName="NegocioPlayModel.Compras">
+        <MappingFragment StoreEntitySet="Compras">
+          <ScalarProperty Name="cod_compra" ColumnName="cod_compra" />
+          <ScalarProperty Name="cod_proveedor" ColumnName="cod_proveedor" />
+          <ScalarProperty Name="fecha_compra" ColumnName="fecha_compra" />
+          <ScalarProperty Name="total" ColumnName="total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Detalle_compra">
+      <EntityTypeMapping TypeName="NegocioPlayModel.Detalle_compra">
+        <MappingFragment StoreEntitySet="Detalle_compra">
+          <ScalarProperty Name="cod_detalle" ColumnName="cod_detalle" />
+          <ScalarProperty Name="cod_compra" ColumnName="cod_compra" />
+          <ScalarProperty Name="cod_producto" ColumnName="cod_producto" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Detalle_ventas">
+      <EntityTypeMapping TypeName="NegocioPlayModel.Detalle_ventas">
+        <MappingFragment StoreEntitySet="Detalle_ventas">
+          <ScalarProperty Name="cod_detalle" ColumnName="cod_detalle" />
+          <ScalarProperty Name="cod_ventas" ColumnName="cod_ventas" />
+          <ScalarProperty Name="cod_producto" ColumnName="cod_producto" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="precio_producto" ColumnName="precio_producto" />
+          <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Producto">
+      <EntityTypeMapping TypeName="NegocioPlayModel.Producto">
+        <MappingFragment StoreEntitySet="Producto">
+          <ScalarProperty Name="cod_producto" ColumnName="cod_producto" />
+          <ScalarProperty Name="nom_producto" ColumnName="nom_producto" />
+          <ScalarProperty Name="categoria" ColumnName="categoria" />
+          <ScalarProperty Name="precio_compra" ColumnName="precio_compra" />
+          <ScalarProperty Name="precio_venta" ColumnName="precio_producto" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proveedor">
+      <EntityTypeMapping TypeName="NegocioPlayModel.Proveedor">
+        <MappingFragment StoreEntitySet="Proveedor">
+          <ScalarProperty Name="cod_proveedor" ColumnName="cod_proveedor" />
+          <ScalarProperty Name="nom_proveedor" ColumnName="nom_proveedor" />
+          <ScalarProperty Name="telefono_proveedor" ColumnName="telefono_proveedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ventas">
+      <EntityTypeMapping TypeName="NegocioPlayModel.Ventas">
+        <MappingFragment StoreEntitySet="Ventas">
+          <ScalarProperty Name="cod_venta" ColumnName="cod_venta" />
+          <ScalarProperty Name="cod_cliente" ColumnName="cod_cliente" />
+          <ScalarProperty Name="fecha_venta" ColumnName="fecha_venta" />
+          <ScalarProperty Name="total" ColumnName="total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

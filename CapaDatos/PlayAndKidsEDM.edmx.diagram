@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dc599bada8714ef792e2d28836906301" Name="Diagram1">
+        <EntityTypeShape EntityType="NegocioPlayModel.Clientes" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="NegocioPlayModel.Compras" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="NegocioPlayModel.Detalle_compra" Width="1.5" PointX="5.375" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NegocioPlayModel.Detalle_ventas" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="NegocioPlayModel.Producto" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NegocioPlayModel.Proveedor" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NegocioPlayModel.Ventas" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="NegocioPlayModel.FK_Ventas_ToCliente" ManuallyRouted="false" />
+        <AssociationConnector Association="NegocioPlayModel.FK_Compras_ToProveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="NegocioPlayModel.FK_Table_ToProducto" ManuallyRouted="false" />
+        <AssociationConnector Association="NegocioPlayModel.FK_Detalle_ventas_ToProducto" ManuallyRouted="false" />
+        <AssociationConnector Association="NegocioPlayModel.FK_Detalle_ventas_ToVentas" />
+        <AssociationConnector Association="NegocioPlayModel.FK_Detalle_compra_ToCompras" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

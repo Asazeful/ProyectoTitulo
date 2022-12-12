@@ -1,0 +1,27 @@
+﻿<Window x:Class="CapaCliente.Clientes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CapaCliente"
+        mc:Ignorable="d"
+        Title="Clientes" Height="450" Width="800">
+    <Grid>
+        <Label Content="Clientes:" HorizontalAlignment="Left" Margin="502,21,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtNombreCliente" HorizontalAlignment="Left" Height="23" Margin="33,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TxtNombreCliente_TextChanged"/>
+        <CheckBox x:Name="CheckDeudor" Content="Deudor" HorizontalAlignment="Left" Margin="216,44,0,0" VerticalAlignment="Top" Click="CheckDeudor_Click"/>
+        <Label Content="Nombre cliente:" HorizontalAlignment="Left" Margin="23,18,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="BtnVolver" Content="Volver" HorizontalAlignment="Left" Margin="10,389,0,0" VerticalAlignment="Top" Width="75" Click="BtnVolver_Click"/>
+        <Button x:Name="BtnNuevoCliente" Content="Nuevo cliente" HorizontalAlignment="Left" Margin="216,113,0,0" VerticalAlignment="Top" Width="107" Click="BtnNuevoCliente_Click"/>
+        <TextBox x:Name="TxtTelefonoCliente" HorizontalAlignment="Left" Height="23" Margin="33,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
+        <Label x:Name="LblTelefonoCliente" Content="Teléfono cliente:" HorizontalAlignment="Left" Margin="23,87,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <TextBox x:Name="TxtDeudaCliente" HorizontalAlignment="Left" Height="23" Margin="33,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Visibility="Hidden" IsEnabled="False"/>
+        <Label x:Name="LblDeudaCliente" Content="Deuda cliente:" HorizontalAlignment="Left" Margin="23,153,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Button x:Name="BtnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="44,224,0,0" VerticalAlignment="Top" Width="75" Click="BtnCancelar_Click" Visibility="Hidden"/>
+        <Button x:Name="BtnConfirmar" Content="Confirmar" HorizontalAlignment="Left" Margin="216,156,0,0" VerticalAlignment="Top" Width="91" Click="BtnConfirmar_Click" Visibility="Hidden"/>
+        <ListBox x:Name="LstClientes" HorizontalAlignment="Left" Height="179" Margin="490,52,0,0" VerticalAlignment="Top" Width="251"/>
+        <Button x:Name="BtnActualizarCliente" Content="Actualizar cliente" HorizontalAlignment="Left" Margin="345,113,0,0" VerticalAlignment="Top" Width="107" Click="BtnActualizarCliente_Click"/>
+        <Button x:Name="BtnAceptarActualizacion" Content="Aceptar" HorizontalAlignment="Left" Margin="345,156,0,0" VerticalAlignment="Top" Width="107" RenderTransformOrigin="0.835,0.374" Click="BtnAceptarActualizacion_Click" Visibility="Hidden"/>
+
+    </Grid>
+</Window>

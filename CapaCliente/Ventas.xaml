@@ -1,0 +1,32 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CapaCliente"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="CapaCliente.Ventas"
+        mc:Ignorable="d"
+        Title="Ventas" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="TxtCliente" HorizontalAlignment="Left" Height="23" Margin="35,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TxtCliente_TextChanged"/>
+        <Label x:Name="LblNombreCliente" Content="Nombre del cliente:" HorizontalAlignment="Left" Margin="22,20,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="LstVentas" HorizontalAlignment="Left" Height="137" Margin="205,48,0,0" VerticalAlignment="Top" Width="239"/>
+        <DatePicker x:Name="DatFechaVenta" HorizontalAlignment="Left" Margin="35,113,0,0" VerticalAlignment="Top">
+            <DatePicker.Resources>
+                <System:DateTime x:Key="DateTime1">2022-12-05</System:DateTime>
+            </DatePicker.Resources>
+        </DatePicker>
+        <Button x:Name="BtnVolver" Content="Volver" HorizontalAlignment="Left" Margin="22,379,0,0" VerticalAlignment="Top" Width="75" Click="BtnVolver_Click"/>
+        <Label x:Name="LblFechaVenta" Content="Fecha de la venta:" HorizontalAlignment="Left" Margin="22,82,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ventas:" HorizontalAlignment="Left" Margin="304,17,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.708,0.5"/>
+        <TextBox x:Name="TxtImporte" HorizontalAlignment="Left" Height="23" Margin="35,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <Label x:Name="LblImporteVenta" Content="Importe de la venta" HorizontalAlignment="Left" Margin="22,159,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="LstDetalleVenta" HorizontalAlignment="Left" Height="100" Margin="205,235,0,0" VerticalAlignment="Top" Width="239"/>
+        <Label Content="Detalle de la venta:" HorizontalAlignment="Left" Margin="273,204,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="BtnNuevaVenta" Content="Nueva Venta" HorizontalAlignment="Left" Margin="562,177,0,0" VerticalAlignment="Top" Width="146" Height="45" Click="BtnNuevaVenta_Click"/>
+        <Button x:Name="BtnFiltrarPorFecha" Content="Filtrar por fecha" HorizontalAlignment="Left" Margin="35,235,0,0" VerticalAlignment="Top" Width="100" Click="BtnFiltrarPorFecha_Click"/>
+        <Button x:Name="BtnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="35,272,0,0" VerticalAlignment="Top" Width="100" Click="BtnCancelar_Click" Visibility="Hidden"/>
+        <Button Content="Obtener detalle" HorizontalAlignment="Left" Margin="35,315,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+
+    </Grid>
+</Window>

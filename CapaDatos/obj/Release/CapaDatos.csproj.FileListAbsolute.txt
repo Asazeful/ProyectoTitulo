@@ -1,0 +1,14 @@
+C:\Users\asa_l\source\repos\ProyectoTitulo\CapaDatos\bin\Release\NegocioPlay.mdf
+C:\Users\asa_l\source\repos\ProyectoTitulo\CapaDatos\bin\Release\NegocioPlay_log.ldf
+C:\Users\asa_l\source\repos\ProyectoTitulo\CapaDatos\bin\Release\CapaDatos.dll.config
+C:\Users\asa_l\source\repos\ProyectoTitulo\CapaDatos\bin\Release\CapaDatos.dll
+C:\Users\asa_l\source\repos\ProyectoTitulo\CapaDatos\bin\Release\CapaDatos.pdb
+C:\Users\asa_l\source\repos\ProyectoTitulo\CapaDatos\bin\Release\EntityFramework.dll
+C:\Users\asa_l\source\repos\ProyectoTitulo\CapaDatos\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\asa_l\source\repos\ProyectoTitulo\CapaDatos\bin\Release\EntityFramework.xml
+C:\Users\asa_l\source\repos\ProyectoTitulo\CapaDatos\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\asa_l\source\repos\ProyectoTitulo\CapaDatos\obj\Release\CapaDatos.csprojAssemblyReference.cache
+C:\Users\asa_l\source\repos\ProyectoTitulo\CapaDatos\obj\Release\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\asa_l\source\repos\ProyectoTitulo\CapaDatos\obj\Release\CapaDatos.csproj.CopyComplete
+C:\Users\asa_l\source\repos\ProyectoTitulo\CapaDatos\obj\Release\CapaDatos.dll
+C:\Users\asa_l\source\repos\ProyectoTitulo\CapaDatos\obj\Release\CapaDatos.pdb
